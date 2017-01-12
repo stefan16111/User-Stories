@@ -1,0 +1,73 @@
+{% extends "UserStoriesBundle::index.html.twig" %}
+
+{% block title %}
+    Wyświetlanie Usera
+{% endblock %}
+
+{% block body %}  
+    <h3> User : </h3>
+    {{ user.id }}
+    {{ user.name }}
+    {{ user.surname }}
+    {{ user.description }}
+    <h5> Adres : </h5>
+    <table>
+        <thead>
+            <tr>
+                <td>Nr.</td>
+                <td>Miasto</td>
+                <td>Ulica</td>
+                <td>Nr. Domu</td>
+                <td>Nr. Mieszkania</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ad in adres %}
+                <tr><td>{{ loop.index }} </td>
+                    <td>{{ ad.city }}</td>
+                    <td>{{ ad.street }}</td> 
+                    <td>{{ ad.houseNumber }}</td>
+                    <td>{{ ad.apartments }}</td>
+                    <td><a href="{{ path('delete_address', { 'id': ad.id }) }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+        <h6>Dodaj Adres : <a href="{{ path('add_address', { 'id': user.id }) }}">Dodaj</a></h6>
+    <h5> Email : </h5>
+    <table>
+        <thead>
+            <tr>
+                <td>email</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for em in email %}
+                <tr><td>{{ loop.index }} </td>
+                    <td>{{ em.emailAddress }}</td>
+                    <td>{{ em.type }}</td>
+                    <td><a href="{{ path('delete_email', { 'id': em.id }) }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+        <h6>Dodaj Email : <a href="{{ path('add_email', { 'id': user.id }) }}">Dodaj</a></h6>
+    <h5> Telefon : </h5>
+    <table>
+        <thead>
+            <tr>
+                <td>Nr.</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tl in tel %}
+                <tr><td>{{ loop.index }} </td>
+                    <td>{{ tl.phoneNumber }}</td>
+                    <td>{{ tl.type }}</td>
+                    <td><a href="{{ path('delete_phone', { 'id': tl.id }) }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+        <h6>Dodaj Telefon : <a href="{{ path('add_tel', { 'id': user.id }) }}">Dodaj</a></h6>
+{% endblock %}

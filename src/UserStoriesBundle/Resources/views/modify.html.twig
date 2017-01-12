@@ -1,0 +1,26 @@
+{% extends "UserStoriesBundle::index.html.twig" %}
+
+{% block title %}
+    Edytowanie Usera
+{% endblock %}
+
+{% block body %} 
+<h3>Edycja</h3>  
+    {{ form_start(form) }}
+    {{ form_row(form.Name) }}
+    {{ form_row(form.Surname) }}
+    {{ form_row(form.Description) }}
+
+    <button type="submit">Zapisz</button>
+{{ form_end(form) }}
+
+    {{ form_start(form_address) }}
+    {{ form_row(form_address.City) }}
+    {{ form_row(form_address.Street) }}
+    {{ form_row(form_address.HouseNumber) }}
+    {{ form_row(form_address.Apartments) }}
+
+    <button type="submit">Zapisz</button>
+{{ form_end(form_address) }}
+
+{% endblock %}

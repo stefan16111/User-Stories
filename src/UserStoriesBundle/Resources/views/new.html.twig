@@ -1,0 +1,16 @@
+{% extends "UserStoriesBundle::index.html.twig" %}
+
+{% block title %}
+    Dodawanie nowego Usera
+{% endblock %}
+
+{% block body %}    
+    {{ form_start(form) }}
+    {{ form_row(form.Name) }}
+    {{ form_row(form.Surname) }}
+    {{ form_row(form.Description) }}
+
+    <button type="submit">Zapisz</button>
+{{ form_end(form) }}
+
+{% endblock %}

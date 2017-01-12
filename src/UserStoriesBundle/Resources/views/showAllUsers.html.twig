@@ -1,0 +1,22 @@
+{% extends "UserStoriesBundle::index.html.twig" %}
+
+{% block body %} 
+    <table>
+        <thead>
+            <tr>
+                <td>Nr.</td>
+                <td>Nazwisko</td>
+                <td>Imie</td>
+                <td colspan="2">Akcja</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in allUsers %}
+                <tr><td>{{ loop.index }} </td><td>{{ user.surname }}</td><td> 
+                        <a href="{{ path('showUser', { 'id': user.id }) }}">{{ user.name }} </a></td>
+                    <td><a href="{{ path('modify', { 'id': user.id }) }}">Edit</a></td>
+                    <td><a href="{{ path('delete', { 'id': user.id }) }}">Delete</a></td></tr>
+                {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
