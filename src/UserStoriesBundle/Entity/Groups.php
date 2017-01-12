@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="groups")
  * @ORM\Entity(repositoryClass="UserStoriesBundle\Repository\GroupsRepository")
  */
-class Groups
-{
+class Groups {
+
     /**
      * @var int
      *
@@ -21,14 +21,13 @@ class Groups
      */
     private $id;
 
-
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

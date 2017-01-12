@@ -11,8 +11,8 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="address")
  * @ORM\Entity(repositoryClass="UserStoriesBundle\Repository\AddressRepository")
  */
-class Address
-{
+class Address {
+
     /**
      * @var int
      *
@@ -63,8 +63,7 @@ class Address
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -75,8 +74,7 @@ class Address
      *
      * @return Address
      */
-    public function setCity($city)
-    {
+    public function setCity($city) {
         $this->city = $city;
 
         return $this;
@@ -87,8 +85,7 @@ class Address
      *
      * @return string
      */
-    public function getCity()
-    {
+    public function getCity() {
         return $this->city;
     }
 
@@ -99,8 +96,7 @@ class Address
      *
      * @return Address
      */
-    public function setStreet($street)
-    {
+    public function setStreet($street) {
         $this->street = $street;
 
         return $this;
@@ -111,8 +107,7 @@ class Address
      *
      * @return string
      */
-    public function getStreet()
-    {
+    public function getStreet() {
         return $this->street;
     }
 
@@ -123,8 +118,7 @@ class Address
      *
      * @return Address
      */
-    public function setHouseNumber($houseNumber)
-    {
+    public function setHouseNumber($houseNumber) {
         $this->houseNumber = $houseNumber;
 
         return $this;
@@ -135,8 +129,7 @@ class Address
      *
      * @return int
      */
-    public function getHouseNumber()
-    {
+    public function getHouseNumber() {
         return $this->houseNumber;
     }
 
@@ -147,8 +140,7 @@ class Address
      *
      * @return Address
      */
-    public function setApartments($apartments)
-    {
+    public function setApartments($apartments) {
         $this->apartments = $apartments;
 
         return $this;
@@ -159,8 +151,7 @@ class Address
      *
      * @return int
      */
-    public function getApartments()
-    {
+    public function getApartments() {
         return $this->apartments;
     }
 
@@ -171,8 +162,7 @@ class Address
      *
      * @return Address
      */
-    public function setAddressUser(\UserStoriesBundle\Entity\User $addressUser = null)
-    {
+    public function setAddressUser(\UserStoriesBundle\Entity\User $addressUser = null) {
         $this->address_user = $addressUser;
 
         return $this;
@@ -183,8 +173,8 @@ class Address
      *
      * @return \UserStoriesBundle\Entity\User
      */
-    public function getAddressUser()
-    {
+    public function getAddressUser() {
         return $this->address_user;
     }
+
 }

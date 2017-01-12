@@ -11,8 +11,8 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="UserStoriesBundle\Repository\UserRepository")
  */
-class User
-{
+class User {
+
     /**
      * @var int
      *
@@ -42,7 +42,7 @@ class User
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-    
+
     /**
      * @var string
      * 
@@ -56,27 +56,26 @@ class User
      * @ORM\OneToMany(targetEntity="Phone", mappedBy="phone_user")
      */
     private $user_phone;
-    
+
     /**
      * @var string
      * 
      * @ORM\OneToMany(targetEntity="Email", mappedBy="email_user")
      */
     private $user_email;
-    
+
     public function __construct() {
         $this->user_address = new ArrayCollection();
         $this->user_phone = new ArrayCollection();
         $this->user_email = new ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -87,8 +86,7 @@ class User
      *
      * @return User
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -99,8 +97,7 @@ class User
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -111,8 +108,7 @@ class User
      *
      * @return User
      */
-    public function setSurname($surname)
-    {
+    public function setSurname($surname) {
         $this->surname = $surname;
 
         return $this;
@@ -123,8 +119,7 @@ class User
      *
      * @return string
      */
-    public function getSurname()
-    {
+    public function getSurname() {
         return $this->surname;
     }
 
@@ -135,8 +130,7 @@ class User
      *
      * @return User
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -147,8 +141,7 @@ class User
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -159,8 +152,7 @@ class User
      *
      * @return User
      */
-    public function addUserAddress(\UserStoriesBundle\Entity\Address $userAddress)
-    {
+    public function addUserAddress(\UserStoriesBundle\Entity\Address $userAddress) {
         $this->user_address[] = $userAddress;
 
         return $this;
@@ -171,8 +163,7 @@ class User
      *
      * @param \UserStoriesBundle\Entity\Address $userAddress
      */
-    public function removeUserAddress(\UserStoriesBundle\Entity\Address $userAddress)
-    {
+    public function removeUserAddress(\UserStoriesBundle\Entity\Address $userAddress) {
         $this->user_address->removeElement($userAddress);
     }
 
@@ -181,8 +172,7 @@ class User
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getUserAddress()
-    {
+    public function getUserAddress() {
         return $this->user_address;
     }
 
@@ -193,8 +183,7 @@ class User
      *
      * @return User
      */
-    public function addUserPhone(\UserStoriesBundle\Entity\Phone $userPhone)
-    {
+    public function addUserPhone(\UserStoriesBundle\Entity\Phone $userPhone) {
         $this->user_phone[] = $userPhone;
 
         return $this;
@@ -205,8 +194,7 @@ class User
      *
      * @param \UserStoriesBundle\Entity\Phone $userPhone
      */
-    public function removeUserPhone(\UserStoriesBundle\Entity\Phone $userPhone)
-    {
+    public function removeUserPhone(\UserStoriesBundle\Entity\Phone $userPhone) {
         $this->user_phone->removeElement($userPhone);
     }
 
@@ -215,8 +203,7 @@ class User
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getUserPhone()
-    {
+    public function getUserPhone() {
         return $this->user_phone;
     }
 
@@ -227,8 +214,7 @@ class User
      *
      * @return User
      */
-    public function addUserEmail(\UserStoriesBundle\Entity\Email $userEmail)
-    {
+    public function addUserEmail(\UserStoriesBundle\Entity\Email $userEmail) {
         $this->user_email[] = $userEmail;
 
         return $this;
@@ -239,8 +225,7 @@ class User
      *
      * @param \UserStoriesBundle\Entity\Email $userEmail
      */
-    public function removeUserEmail(\UserStoriesBundle\Entity\Email $userEmail)
-    {
+    public function removeUserEmail(\UserStoriesBundle\Entity\Email $userEmail) {
         $this->user_email->removeElement($userEmail);
     }
 
@@ -249,8 +234,8 @@ class User
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getUserEmail()
-    {
+    public function getUserEmail() {
         return $this->user_email;
     }
+
 }

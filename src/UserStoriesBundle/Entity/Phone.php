@@ -11,8 +11,8 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="phone")
  * @ORM\Entity(repositoryClass="UserStoriesBundle\Repository\PhoneRepository")
  */
-class Phone
-{
+class Phone {
+
     /**
      * @var int
      *
@@ -35,7 +35,7 @@ class Phone
      * @ORM\Column(name="type", type="string", length=255)
      */
     private $type;
-    
+
     /**
      * @var string
      * 
@@ -44,14 +44,12 @@ class Phone
      */
     private $phone_user;
 
-
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -62,8 +60,7 @@ class Phone
      *
      * @return Phone
      */
-    public function setPhoneNumber($phoneNumber)
-    {
+    public function setPhoneNumber($phoneNumber) {
         $this->phoneNumber = $phoneNumber;
 
         return $this;
@@ -74,8 +71,7 @@ class Phone
      *
      * @return int
      */
-    public function getPhoneNumber()
-    {
+    public function getPhoneNumber() {
         return $this->phoneNumber;
     }
 
@@ -86,8 +82,7 @@ class Phone
      *
      * @return Phone
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
 
         return $this;
@@ -98,8 +93,7 @@ class Phone
      *
      * @return string
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -110,8 +104,7 @@ class Phone
      *
      * @return Phone
      */
-    public function setPhoneUser(\UserStoriesBundle\Entity\User $phoneUser = null)
-    {
+    public function setPhoneUser(\UserStoriesBundle\Entity\User $phoneUser = null) {
         $this->phone_user = $phoneUser;
 
         return $this;
@@ -122,8 +115,8 @@ class Phone
      *
      * @return \UserStoriesBundle\Entity\User
      */
-    public function getPhoneUser()
-    {
+    public function getPhoneUser() {
         return $this->phone_user;
     }
+
 }

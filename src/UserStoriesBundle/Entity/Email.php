@@ -11,8 +11,8 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="email")
  * @ORM\Entity(repositoryClass="UserStoriesBundle\Repository\EmailRepository")
  */
-class Email
-{
+class Email {
+
     /**
      * @var int
      *
@@ -49,8 +49,7 @@ class Email
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -61,8 +60,7 @@ class Email
      *
      * @return Email
      */
-    public function setEmailAddress($emailAddress)
-    {
+    public function setEmailAddress($emailAddress) {
         $this->emailAddress = $emailAddress;
 
         return $this;
@@ -73,8 +71,7 @@ class Email
      *
      * @return string
      */
-    public function getEmailAddress()
-    {
+    public function getEmailAddress() {
         return $this->emailAddress;
     }
 
@@ -85,8 +82,7 @@ class Email
      *
      * @return Email
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
 
         return $this;
@@ -97,8 +93,7 @@ class Email
      *
      * @return string
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -109,8 +104,7 @@ class Email
      *
      * @return Email
      */
-    public function setEmailUser(\UserStoriesBundle\Entity\User $emailUser = null)
-    {
+    public function setEmailUser(\UserStoriesBundle\Entity\User $emailUser = null) {
         $this->email_user = $emailUser;
 
         return $this;
@@ -121,8 +115,8 @@ class Email
      *
      * @return \UserStoriesBundle\Entity\User
      */
-    public function getEmailUser()
-    {
+    public function getEmailUser() {
         return $this->email_user;
     }
+
 }
