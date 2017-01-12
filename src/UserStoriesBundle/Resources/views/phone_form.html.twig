@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block body %} 
-    {{ dump(form) }}
+    <h3>Dodawanie Numeru Telefonu : </h3>
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.phoneNumber) }}
+    {{ form_row(form.type) }}
     {{ form_end(form) }}
 
 {% endblock %}

@@ -4,10 +4,10 @@
     Dodawanie Edycja Email
 {% endblock %}
 
-{% block body %}  
-    {{ dump(form) }}
+{% block body %} 
+    <h3>Dodawanie Adresu Email : </h3>
     {{ form_start(form) }}
-    {{ form_widget(form.emailAddress }}
-    {{ form_widget(form.type }}
+    {{ form_row(form.emailAddress) }}
+    {{ form_row(form.type) }}
     {{ form_end(form) }}
 {% endblock %}

@@ -12,7 +12,7 @@ use UserStoriesBundle\Form\AddressType;
 class AddressController extends Controller {
 
     /**
-     * @Route("/{id}/delete", name="delete_address")
+     * @Route("/{id}/deleteAddress", name="delete_address")
      * @Template("UserStoriesBundle::show.html.twig")
      */
     public function deleteAction($id) {

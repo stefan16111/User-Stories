@@ -4,9 +4,13 @@
     Dodawanie Edycja Adresu
 {% endblock %}
 
-{% block body %}    
+{% block body %}
+    <h3>Dodawanie Adresu : </h3>
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.City) }}
+    {{ form_row(form.Street) }}
+    {{ form_row(form.HouseNumber) }}
+    {{ form_row(form.Apartments) }}
     {{ form_end(form) }}
 
 {% endblock %}

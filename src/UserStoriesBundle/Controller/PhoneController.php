@@ -12,7 +12,7 @@ use UserStoriesBundle\Form\PhoneType;
 class PhoneController extends Controller {
 
     /**
-     * @Route("/{id}/delete", name="delete_phone")
+     * @Route("/{id}/deletePhone", name="delete_phone")
      * @Template("UserStoriesBundle::show.html.twig")
      */
     public function deleteAction($id) {

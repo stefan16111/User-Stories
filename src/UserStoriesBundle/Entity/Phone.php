@@ -40,7 +40,7 @@ class Phone
      * @var string
      * 
      * @ORM\ManyToOne(targetEntity="User", inversedBy="user_phone")
-     * @ORM\JoinColumn(name="phone_user", referencedColumnName="id")
+     * @ORM\JoinColumn(name="phone_user", referencedColumnName="id", onDelete="CASCADE")
      */
     private $phone_user;
 
